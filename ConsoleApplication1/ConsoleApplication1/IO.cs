@@ -10,13 +10,13 @@ namespace ConsoleApplication1
 {
     class IO
     {
-        static private int sizeOfSquare = 0; // Размер квадрата
-        static private string[] words; // Массив с размером слов
+        static public int sizeOfSquare = 0; // Размер квадрата
+        static public string[] words; // Массив с размером слов
 
         static void Read()
         {
             sizeOfSquare = ReadSize();
-
+            words = ReadWords(sizeOfSquare*2);
         }
 
         static int ReadSize()
@@ -57,10 +57,18 @@ namespace ConsoleApplication1
                             break;
                         }
                     }
+
+                    if (word.Length != sizeOfSquare)
+                    {
+                        Console.WriteLine("Длина слова должна быть равна {0} символам!", sizeOfSquare);
+                        checkWord = false;
+                    }
                 } while (!checkWord);
 
                 newWords[i] = word;
             }
+
+            return newWords;
         }
     }
 }
