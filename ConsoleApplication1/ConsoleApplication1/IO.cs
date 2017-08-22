@@ -13,10 +13,13 @@ namespace ConsoleApplication1
         static public int sizeOfSquare = 0; // Размер квадрата
         static public string[] words; // Массив с размером слов
 
-        static void Read()
+        public static void Read(ref int size, ref string[] masWords)
         {
             sizeOfSquare = ReadSize();
             words = ReadWords(sizeOfSquare*2);
+
+            size = sizeOfSquare;
+            masWords = words;
         }
 
         static int ReadSize()

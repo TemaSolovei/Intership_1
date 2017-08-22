@@ -17,7 +17,8 @@ namespace ConsoleApplication1
 
         static void Main(string[] args)
         {
-            
+            IO.Read(ref size, ref words);
+
         }
     }
 }
